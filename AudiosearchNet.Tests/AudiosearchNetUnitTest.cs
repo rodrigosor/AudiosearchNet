@@ -7,14 +7,17 @@ namespace AudiosearchNet.Tests
     {
         private AudiosearchNetClient client;
 
-        [TestMethod]
-        public void AudiosearchNetClient_Authorize()
+        public AudiosearchNetUnitTest()
         {
             client = new AudiosearchNetClient(
                     "64063835fac8e5913e120bd224aa4ef74920005dace4700a19aad3f7f3302dea",
                     "3970f51578b743cc8ecbbfb0d61c9798860ccdd159f7092130eaac62273bc667"
                 );
+        }
 
+        [TestMethod]
+        public void AudiosearchNetClient_Authorize()
+        {
             Assert.IsNotNull(client.AccessToken, "Failed: Access Token cannot be null.");
         }
 
