@@ -1,4 +1,6 @@
 ﻿using AudiosearchNet.Models;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace AudiosearchNet
 {
@@ -33,5 +35,18 @@ namespace AudiosearchNet
             ApplicationSecret = applicationSecret;
             AccessToken = this.Authorize(Config.AUTHORIZATION_ENDPOINT);
         }
+
+        #region Shows
+
+        public AudiosearchNetApiResult<Show> GetShowsByQuery(string query)
+        {
+            var response = this.GetJsonResponse(
+                    string.Concat(Endpoint.SEARCH_SHOW_BY_QUERY, query)
+                );
+
+            return JsonConvert.DeserializeObject<AudiosearchNetApiResult<Show>>(response);
+        }
+
+        #endregion
     }
 }

@@ -15,10 +15,19 @@ namespace AudiosearchNet.Models
         public string Network { get; set; }
 
         [JsonProperty("categories")]
-        public List<string> Categories { get; set; }
+        public List<Category> Categories { get; set; }
 
         [JsonProperty("description")]
         public string Description { get; set; }
+
+        [JsonProperty("ui_url")]
+        public string AudiosearchUrl { get; set; }
+
+        [JsonProperty("rss_url")]
+        public string RssUrl { get; set; }
+
+        [JsonProperty("buzz_score")]
+        public string Score { get; set; }
 
         [JsonProperty("image_files")]
         public List<Image> Images { get; set; }
@@ -37,8 +46,5 @@ namespace AudiosearchNet.Models
 
         [JsonProperty("recent_episodes")]
         public List<Episode> RecentEpisodes { get; set; }
-
-        [JsonProperty("buzz_score")]
-        public int Score { get; set; }
     }
 }

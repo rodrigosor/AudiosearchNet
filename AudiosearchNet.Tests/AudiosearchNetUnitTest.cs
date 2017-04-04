@@ -15,6 +15,8 @@ namespace AudiosearchNet.Tests
             var client = new AudiosearchNetClient(
                     applicationId, applicationSecret
                 );
+
+            var x = client.GetShowsByQuery("Jovem Nerd");
         }
     }
 }

@@ -45,15 +45,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AudiosearchNetApiResult.cs" />
     <Compile Include="AudiosearchNetClient.cs" />
+    <Compile Include="Endpoint.cs" />
     <Compile Include="Extensions\AudiosearchNetExtensions.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="Extensions\DictionaryExtensions.cs" />
     <Compile Include="Extensions\HttpWebRequestExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Models\AccessToken.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\File.cs" />
+    <Compile Include="Models\Filter.cs" />
     <Compile Include="Models\Image.cs" />
     <Compile Include="Models\Episode.cs" />
+    <Compile Include="Models\Query.cs" />
     <Compile Include="Models\Show.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
