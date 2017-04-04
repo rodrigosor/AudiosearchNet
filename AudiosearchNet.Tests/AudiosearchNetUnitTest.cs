@@ -9,14 +9,12 @@ namespace AudiosearchNet.Tests
         [TestMethod]
         public void AudiosearchNetClient_Authorize()
         {
-            var applicationId = "[Your app ID]";
-            var applicationSecret = "[You app Secret]";
+            var applicationId = "64063835fac8e5913e120bd224aa4ef74920005dace4700a19aad3f7f3302dea";
+            var applicationSecret = "3970f51578b743cc8ecbbfb0d61c9798860ccdd159f7092130eaac62273bc667";
 
             var client = new AudiosearchNetClient(
                     applicationId, applicationSecret
                 );
-
-            var results = client.GetShow("Jovem Nerd");
         }
     }
 }
