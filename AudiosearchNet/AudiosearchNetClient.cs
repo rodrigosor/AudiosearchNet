@@ -38,10 +38,29 @@ namespace AudiosearchNet
 
         #region Shows
 
-        public AudiosearchNetApiResult<Show> GetShowsByQuery(string query)
+        /// <summary>
+        /// Returns search results for Shows.
+        /// </summary>
+        /// <param name="keyWords">Keyworkds to search shows.</param>
+        /// <returns>Results for Shows.</returns>
+        public AudiosearchNetApiResult<Show> GetShowsByQuery(string keyWords)
         {
             var response = this.GetJsonResponse(
-                    string.Concat(Endpoint.SEARCH_SHOW_BY_QUERY, query)
+                    string.Concat(Endpoint.SEARCH_SHOW_BY_QUERY, keyWords)
+                );
+
+            return JsonConvert.DeserializeObject<AudiosearchNetApiResult<Show>>(response);
+        }
+
+        /// <summary>
+        /// Returns search results for Shows.
+        /// </summary>
+        /// <param name="query">Query to search shows.</param>
+        /// <returns>Results for Shows.</returns>
+        public AudiosearchNetApiResult<Show> GetShowsByQuery(Query query)
+        {
+            var response = this.GetJsonResponse(
+                    string.Concat(Endpoint.SEARCH_SHOW_BY_QUERY, query.ToString())
                 );
 
             return JsonConvert.DeserializeObject<AudiosearchNetApiResult<Show>>(response);

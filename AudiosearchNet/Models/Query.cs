@@ -48,5 +48,24 @@
         /// The page number of results. Default is 1.
         /// </summary>
         public int Page { get; set; }
+
+        /// <summary>
+        /// Print query as Query String parameter.
+        /// </summary>
+        /// <returns>Query as Query String parameter.</returns>
+        public override string ToString()
+        {
+            return string.Format("{0}?filters[{1}]={2}&sort_by={3}&sort_order={4}&s={5}&size={6}&from={7}&page={8}",
+                    KeyWords,
+                    Filter.FieldName,
+                    Filter.Value,
+                    SortBy,
+                    SortOrder,
+                    SortByAndOrderBy,
+                    PageSize,
+                    PageOffset,
+                    Page
+                );
+        }
     }
 }
