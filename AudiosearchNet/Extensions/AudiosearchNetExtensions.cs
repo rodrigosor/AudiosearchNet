@@ -2,13 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Script.Serialization;
 
 namespace AudiosearchNet
 {
@@ -35,13 +29,24 @@ namespace AudiosearchNet
         /// <returns>An AccessToken object</returns>
         public static AccessToken Authorize(this AudiosearchNetClient client, string path)
         {
-            var requestUrl = string.Concat(Config.HOST_BASE_URL, path);
-            var parameters = new Dictionary<string, string> { { "grant_type", "client_credentials" } };
-            var request = (HttpWebRequest)WebRequest.Create(requestUrl);
+            try
+            {
+                var parameters = new Dictionary<string, string> { { "grant_type", "client_credentials" } };
+                var request = (HttpWebRequest)WebRequest.Create(string.Concat(Config.HOST_BASE_URL, path));
 
-            request.Headers.Add(HttpRequestHeader.Authorization, client.CreateSignature());
+                request.Headers.Add(
+                        HttpRequestHeader.Authorization, 
+                        client.CreateSignature()
+                    );
 
-            return JsonConvert.DeserializeObject<AccessToken>(request.Post(parameters));
+                return JsonConvert.DeserializeObject<AccessToken>(
+                        request.Post(parameters)
+                    );
+            }
+            catch (Exception ex)
+            {
+                throw new OperationCanceledException("Failure in authorization process", ex);
+            }
         }
 
         //        httpClient.DefaultRequestHeaders.Add("Authorization", string.Format("Bearer {0}", accessToken));
