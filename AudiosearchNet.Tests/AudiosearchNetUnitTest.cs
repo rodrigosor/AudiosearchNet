@@ -9,8 +9,7 @@ namespace AudiosearchNet.Tests
 
 		public AudiosearchNetUnitTest()
 		{
-			client = TestHelper.CreateAudiosearchNetClient();
-
+			client = new AudiosearchNetClient("[YOUR APPLICATION ID]", "[YOUR APPLICATION SECRET]");
 		}
 
 		[TestMethod]
