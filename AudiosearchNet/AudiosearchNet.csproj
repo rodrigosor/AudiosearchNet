@@ -61,6 +61,7 @@
     <Compile Include="Models\Episode.cs" />
     <Compile Include="Models\Query.cs" />
     <Compile Include="Models\Show.cs" />
+    <Compile Include="Models\Network.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

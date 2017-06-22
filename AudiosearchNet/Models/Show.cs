@@ -12,7 +12,7 @@ namespace AudiosearchNet.Models
         public string Title { get; set; }
 
         [JsonProperty("network")]
-        public string Network { get; set; }
+        public Network Network { get; set; }
 
         [JsonProperty("categories")]
         public List<Category> Categories { get; set; }
