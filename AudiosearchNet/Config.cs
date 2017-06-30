@@ -1,5 +1,8 @@
 ﻿namespace AudiosearchNet
 {
+	/// <summary>
+	/// Configuration for the project
+	/// </summary> 
     internal class Config
     {
         public const string HOST_PROTOCOL = @"https://";
