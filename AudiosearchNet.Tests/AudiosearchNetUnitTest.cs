@@ -37,7 +37,7 @@ namespace AudiosearchNet.Tests
 		[TestCategory("Integration"), TestMethod]
 		public void AudiosearchNetClient_DymamicResults()
 		{
-			dynamic dynamicShow = client.GetShowsById(613);
+			dynamic dynamicShow = client.GetShowsById_Dynamic(613);
 
 			Assert.IsNotNull(dynamicShow.id);
 			Assert.IsNotNull(dynamicShow.title);
@@ -60,6 +60,19 @@ namespace AudiosearchNet.Tests
 			Assert.IsNotNull(dynamicShow.rss_url);
 			Assert.IsNotNull(dynamicShow.sc_feed);
 			Assert.IsNotNull(dynamicShow.web_profiles);
+		}
+
+		[TestCategory("Integration"), TestMethod]
+		public void AudiosearchNetClient_GetCategories()
+		{
+			var response = client.GetCategories();
+			Assert.IsNotNull(response);
+
+			foreach (var category in response)
+			{
+				Assert.IsNotNull(category.Id);
+				Assert.IsNotNull(category.Name);
+			}
 		}
 	}
 }
