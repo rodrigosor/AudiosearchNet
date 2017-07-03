@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AudiosearchNet</RootNamespace>
     <AssemblyName>AudiosearchNet</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -31,10 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
+    <PackageReference Include="Newtonsoft.json" Version="10.0.2" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -56,10 +53,14 @@
     <Compile Include="Models\AccessToken.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\File.cs" />
+    <Compile Include="Models\ImageFile.cs" />
+    <Compile Include="Models\Url.cs" />
+    <Compile Include="Models\Urls.cs" />
     <Compile Include="Models\Filter.cs" />
     <Compile Include="Models\Image.cs" />
     <Compile Include="Models\Episode.cs" />
     <Compile Include="Models\Query.cs" />
+    <Compile Include="Models\ShowById.cs" />
     <Compile Include="Models\Show.cs" />
     <Compile Include="Models\Network.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
