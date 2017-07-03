@@ -53,10 +53,14 @@
     <Compile Include="Models\AccessToken.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\File.cs" />
+    <Compile Include="Models\ImageFile.cs" />
+    <Compile Include="Models\Url.cs" />
+    <Compile Include="Models\Urls.cs" />
     <Compile Include="Models\Filter.cs" />
     <Compile Include="Models\Image.cs" />
     <Compile Include="Models\Episode.cs" />
     <Compile Include="Models\Query.cs" />
+    <Compile Include="Models\ShowById.cs" />
     <Compile Include="Models\Show.cs" />
     <Compile Include="Models\Network.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
