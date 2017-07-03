@@ -16,5 +16,6 @@
 		/// This endpoint returns search results for Shows by Id
 		/// </summary>
 		public const string CATEGORIES = @"/categories/";
+		public const string TRENDING_SHOW = @"/chart_daily?limit=10&country=us";
 	}
 }
